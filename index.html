@@ -71,38 +71,98 @@
             <div class='container'>
                 <div class='card'>
                     <div class='card-header'>
-                        <h1>PLANEADOR DOCENTE</h1>
+                        <h1>PLANEADOR CURSO A1</h1>
                     </div>
 
 <!--                     <div class='card-body'>
                         <p>Your account type is: Administrator</p>
                     </div> -->
-                    <table class="table">
-                        <thead class="table-dark">
-                            <tr>
-                                <th scope="col">Header 1</th>
-                                <th scope="col">Header 2</th>
-                                <th scope="col">Header 3</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <th scope="row">Item 1</th>
-                                <th scope="row">Item 2</th>
-                                <th scope="row">Item 3</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">Item 1</th>
-                                <th scope="row">Item 2</th>
-                                <th scope="row">Item 3</th>
-                            </tr>
-                            <tr>
-                                <th scope="row">Item 1</th>
-                                <th scope="row">Item 2</th>
-                                <th scope="row">Item 3</th>
-                            </tr>
-                        </tbody>
+<table class="table">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">Unidades temáticas</th>
+            <th scope="col">Tipo de evidencia</th>
+            <th scope="col">Instrumento de evaluación</th>
+            <th scope="col">Valor de la evaluación</th>
+            <th scope="col">Estrategia o metodología</th>
+        </tr>
+    </thead>
+    <!-- tbody>(tr>th>{Content $}+(th[colspan="1"]>table.table.table-bordered.border-light.table-light>(tr>th>{Campo $})*4)+(th>{Other content $})*3)*3 -->
+    <tbody>
+        <tr>
+            <th>
+                Content 1
+                <th colspan="1">
+                    <table class="table table-bordered border-light table-light">
+                        <tr>
+                            <th>Campo 1</th>
+                        </tr>
+                        <tr>
+                            <th>Campo 2</th>
+                        </tr>
+                        <tr>
+                            <th>Campo 3</th>
+                        </tr>
+                        <tr>
+                            <th>Campo 4</th>
+                        </tr>
                     </table>
+                </th>
+                <th>Other content 1</th>
+                <th>Other content 2</th>
+                <th>Other content 3</th>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Content 2
+                <th colspan="1">
+                    <table class="table table-bordered border-light table-light">
+                        <tr>
+                            <th>Campo 1</th>
+                        </tr>
+                        <tr>
+                            <th>Campo 2</th>
+                        </tr>
+                        <tr>
+                            <th>Campo 3</th>
+                        </tr>
+                        <tr>
+                            <th>Campo 4</th>
+                        </tr>
+                    </table>
+                </th>
+                <th>Other content 1</th>
+                <th>Other content 2</th>
+                <th>Other content 3</th>
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Content 3
+                <th colspan="1">
+                    <table class="table table-bordered border-light table-light">
+                        <tr>
+                            <th>Campo 1</th>
+                        </tr>
+                        <tr>
+                            <th>Campo 2</th>
+                        </tr>
+                        <tr>
+                            <th>Campo 3</th>
+                        </tr>
+                        <tr>
+                            <th>Campo 4</th>
+                        </tr>
+                    </table>
+                </th>
+                <th>Other content 1</th>
+                <th>Other content 2</th>
+                <th>Other content 3</th>
+            </th>
+        </tr>
+    </tbody>
+</table>
                 </div>
             </div>
         </div>
