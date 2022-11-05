@@ -163,7 +163,7 @@
                                     <button aria-expanded="false" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" id="unidad-corte" type="button">
                                         Corte de la Unidad
                                     </button>
-                                    <ul aria-labelledby="unidad-corte" id="lista-corte" class="dropdown-menu">
+                                    <ul aria-labelledby="unidad-corte" class="dropdown-menu" id="lista-corte">
                                         <li>
                                             <a class="dropdown-item" href="#">
                                                 1° Corte
@@ -181,7 +181,7 @@
                                         </li>
                                     </ul>
                                 </div>
-                                <input aria-label="Disabled input example" class="form-control" disabled="" readonly="" type="text" value="Seleccione el corte de la unidad"/>
+                                <input aria-label="Disabled input example" class="form-control" disabled="" id="etiqueta-corte" readonly="" type="text" value="Seleccione el corte de la unidad"/>
                             </div>
                             <div class="m-2">
                                 <label class="form-label" for="nombre-unidad">
@@ -224,6 +224,7 @@
                                         </input>
                                     </div>
                                 </div>
+                                <div class="row mb-2"><button class="btn btn-primary" type="submit">Prueba Botón</button></div>
                             </div>
                         </div>
                     </div>
@@ -231,16 +232,23 @@
             </div>
         </div>
         <script>
+            // https://stackoverflow.com/questions/44194479/about-javascript-onclick-foreach-function
             cortes = document.querySelectorAll("#lista-corte li");
-            tab = [];
-        cortes.forEach((elemento)=>{
-            tab.push(elemento.innerHTML);
-        });
-        tab.forEach((item)=>{
-            item.onClick = function(){
-                console.log(this.innerHTML);
-            }
-        })
+            cortes.forEach((elemento) => {
+                elemento.addEventListener('click', function() {
+                    var contenido = this.textContent;
+                    // console.log(contenido);
+                    document.getElementById("etiqueta-corte").value = contenido;
+
+                })
+
+            });
+        </script>
+        <script>
+            categorias = document.querySelectorAll("#categorias .form-check input label");
+            categorias.forEach((elemento)=>{
+                console.log(elemento.innerHTML);
+            })
         </script>
     </body>
 </html>
