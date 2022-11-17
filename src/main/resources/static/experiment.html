@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="style.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" />
+    <title>Experimento JSON y HTML</title>
+</head>
+
+<body>
+
+    <div class='dashboard'>
+        <div class="dashboard-nav bg-custom-2">
+            <header><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a><a href="#" class="brand-logo"><i
+                        class="fas fa-anchor"></i> <span>PLANEADOR</span></a></header>
+            <nav class="dashboard-nav-list"><a href="#" class="dashboard-nav-item"><i class="fas fa-home"></i>
+                    Mi perfil </a><a href="#" class="dashboard-nav-item active"><i class="fas fa-tachometer-alt"></i>
+                    Microcurrículos
+                </a><a href="#" class="dashboard-nav-item"><i class="fas fa-file-upload"></i> Planeadores </a>
+                <div class='dashboard-nav-dropdown'><a href="#!"
+                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i>
+                        Media </a>
+                    <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a
+                            href="#" class="dashboard-nav-dropdown-item">Recent</a><a href="#"
+                            class="dashboard-nav-dropdown-item">Images</a><a href="#"
+                            class="dashboard-nav-dropdown-item">Video</a></div>
+                </div>
+                <div class='dashboard-nav-dropdown'><a href="#!"
+                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-users"></i> Users </a>
+                    <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a
+                            href="#" class="dashboard-nav-dropdown-item">Subscribed</a><a href="#"
+                            class="dashboard-nav-dropdown-item">Non-subscribed</a><a href="#"
+                            class="dashboard-nav-dropdown-item">Banned</a><a href="#"
+                            class="dashboard-nav-dropdown-item">New</a></div>
+                </div>
+                <div class='dashboard-nav-dropdown'><a href="#!"
+                        class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-money-check-alt"></i>
+                        Payments </a>
+                    <div class='dashboard-nav-dropdown-menu'><a href="#" class="dashboard-nav-dropdown-item">All</a><a
+                            href="#" class="dashboard-nav-dropdown-item">Recent</a><a href="#"
+                            class="dashboard-nav-dropdown-item"> Projections</a>
+                    </div>
+                </div>
+                <a href="#" class="dashboard-nav-item"><i class="fas fa-cogs"></i> Settings </a><a href="#"
+                    class="dashboard-nav-item"><i class="fas fa-user"></i> Profile </a>
+                <div class="nav-item-divider"></div>
+                <a href="#" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i> Logout </a>
+            </nav>
+        </div>
+        <div class='dashboard-app'>
+            <header class='dashboard-toolbar'><a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a></header>
+            <div class='dashboard-content'>
+                <div class='container'>
+                    <div class='card'>
+                        <div class='card-header'>
+                            <h1>PLANEADOR CURSO A1</h1>
+                        </div>
+
+                        <!--                     <div class='card-body'>
+                        <p>Your account type is: Administrator</p>
+                    </div> -->
+                        <table class="table" id="tabla_principal">
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    // https://medium.com/geekculture/capture-and-display-your-json-data-with-vanilla-javascript-4675f81cfb54
+    // https://www.codespot.org/javascript-create-element/
+    // https://stackoverflow.com/a/41179080
+    // https://codepen.io/corbpie/pen/LYNwGdE
+
+    // function crearTabla(datos) {
+    //     let elemento_objetivo = document.getElementById("tabla_principal");
+    //     let contenido = document.createElement('tbody');
+    //     for (registro of datos) {
+
+    //         let fila = document.createElement('tr');
+    //         for (key in datos) {
+    //             let nuevo_dato = document.createElement('td');
+    //             nuevo_dato.textContent = datos[key];
+    //             fila.appendChild(nuevo_dato);
+    //         }
+    //         contenido.appendChild(fila);
+    //     }
+    //     elemento_objetivo.appendChild(contenido);
+    // }
+
+    function dibujarTabla(datos) {
+
+        let elemento_objetivo = document.getElementById("tabla_principal");
+        let contenido = document.createElement('tbody');
+        datos.employees.forEach((item) => {
+            let fila = document.createElement('tr');
+            Object.entries(item).forEach(([key,val]) => {
+                let nuevo_dato = document.createElement('td');
+                nuevo_dato.textContent = JSON.stringify(val);
+                fila.appendChild(nuevo_dato);
+            });
+            contenido.appendChild(fila);
+        });
+        elemento_objetivo.appendChild(contenido);
+    }
+
+    let texto_puro = '{ "employees" : [' +
+        '{ "firstName":"John" , "lastName":"Doe" },' +
+        '{ "firstName":"Anna" , "lastName":"Smith" },' +
+        '{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+    let objeto_prueba = JSON.parse(texto_puro);
+    dibujarTabla(objeto_prueba);
+
+    // objeto_prueba.employees.foreach((item) => {
+    //     object.entries(item).foreach(([key, val]) => {
+    //         console.log(`key-${key}-val-${json.stringify(val)}`)
+    //     });
+    // });
+
+</script>
