@@ -16,7 +16,13 @@ public class DocenteControlador {
 	@Autowired
 	private DocenteServicio servicio;
 	
-	@GetMapping({"/docentes","/"})
+	@GetMapping({"/","/perfil"})
+	public String paginaPrincipal(){
+		return "perfil";
+	}
+	
+//	@GetMapping({"/docentes","/"})
+	@GetMapping({"/docentes"})
 	public String listarDocentes(Model modelo) {
 		modelo.addAttribute("docentes", servicio.listarTodosLosDocentes());
 		return "docentes";
