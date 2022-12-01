@@ -6,6 +6,8 @@ import jakarta.persistence.*;
 public class Docente {
 	
     @Id
+    @OneToOne(mappedBy = "administrador", cascade = CascadeType.ALL)
+    @PrimaryKeyJoinColumn
     private Long documento;
     @Column(name = "primerNombre", nullable = false, length = 50)
     private String primerNombre;
