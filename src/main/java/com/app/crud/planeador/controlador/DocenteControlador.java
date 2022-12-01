@@ -38,7 +38,7 @@ public class DocenteControlador {
 	@GetMapping("/docentes/editar/{documento}")
 	public String editarDocenteFormulario(@PathVariable Long documento, Model modelo) {
 		modelo.addAttribute("docente", servicio.buscarDocentePorDocumento(documento));
-		return "";
+		return "editar_docente";
 	}
 	
 	@PostMapping("/docentes/{documento}")
