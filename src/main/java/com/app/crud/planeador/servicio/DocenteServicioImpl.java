@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.app.crud.planeador.entidad.Administrador;
 import com.app.crud.planeador.entidad.Docente;
 import com.app.crud.planeador.repositorio.DocenteRepositorio;
 
@@ -30,13 +31,15 @@ public class DocenteServicioImpl implements DocenteServicio{
 	}
 
 	@Override
-	public Docente actualizarEstudiante(Docente docente) {
+	public Docente actualizarDocente(Docente docente) {
 		// TODO Auto-generated method stub
 		return repositorio.save(docente);
 	}
 
 	@Override
-	public void eliminarEstudiante(Long id) {
+	public void eliminarDocente(Long id) {
 		repositorio.deleteById(id);
-	};
+	}
+
+
 }

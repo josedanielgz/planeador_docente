@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.app.crud.planeador.entidad.Administrador;
 import com.app.crud.planeador.entidad.Docente;
+import com.app.crud.planeador.servicio.AdministradorServicio;
 import com.app.crud.planeador.servicio.DocenteServicio;
 
 @Controller
@@ -15,11 +17,36 @@ public class DocenteControlador {
 	
 	@Autowired
 	private DocenteServicio servicio;
+	@Autowired
+	private AdministradorServicio adminServicio;
 	
-	@GetMapping({"/","/perfil"})
-	public String paginaPrincipal(){
+//	@GetMapping({"/","/perfil"})
+//	public String paginaPrincipal(){
+//		return "perfil";
+//	}
+	
+	@GetMapping({"/","/inicio"})
+	public String paginaPrincipal(Model model){
+//		https://stackoverflow.com/a/30992510
+//		https://www.thymeleaf.org/doc/articles/springmvcaccessdata.html
+		model.addAttribute("docente", new Docente());
+		return "login";
+	}
+	
+	@PostMapping("/login")
+	public String iniciarSesion(@ModelAttribute("docente") Docente docente, Model model){
+		Administrador actual = adminServicio.buscarAdministradorPorDocumento(docente.getDocumento());
+		if (actual == null) {
+			return "redirect:/login?error";
+		}
 		return "perfil";
 	}
+	
+//	@GetMapping({"/perfil"})
+//	public String redirigirPerfil(){
+//		
+//		return "perfil";
+//	}
 	
 //	@GetMapping({"/docentes","/"})
 	@GetMapping({"/docentes"})
@@ -62,7 +89,7 @@ public class DocenteControlador {
 	
 	@GetMapping("/docentes/{documento}")
 	public String eliminarDocente(@PathVariable Long documento) {
-		servicio.eliminarEstudiante(documento);
+		servicio.eliminarDocente(documento);
 		return "redirect:/docentes";
 	};
 }

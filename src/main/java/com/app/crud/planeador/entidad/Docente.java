@@ -6,21 +6,20 @@ import jakarta.persistence.*;
 @Table(name = "Docente", uniqueConstraints = @UniqueConstraint(columnNames = { "email", "codigo" }))
 public class Docente {
 
-    @Id
-    @OneToOne(mappedBy = "administrador", cascade = CascadeType.ALL)
-    @PrimaryKeyJoinColumn
-    private Long documento;
-    @Column(name = "primerNombre", nullable = false, length = 50)
-    private String primerNombre;
-    @Column(name = "primerApellido", nullable = false, length = 50)
-    private String primerApellido;
-    @Column(name = "codigo", nullable = false, length = 50)
-    private String codigo;
-    @Column(name = "email", nullable = false, length = 50)
-    private String email;
-    @Column(name = "clave", nullable = false, length = 50)
-    private String clave;
-
+	@Id
+//    @OneToOne(mappedBy = "administrador", cascade = CascadeType.ALL)
+//    @PrimaryKeyJoinColumn
+	private Long documento;
+	@Column(name = "primerNombre", nullable = false, length = 50)
+	private String primerNombre;
+	@Column(name = "primerApellido", nullable = false, length = 50)
+	private String primerApellido;
+	@Column(name = "codigo", nullable = false, length = 50)
+	private String codigo;
+	@Column(name = "email", nullable = false, length = 50, unique = true)
+	private String email;
+	@Column(name = "clave", nullable = false, length = 50)
+	private String clave;
 
 	public Long getDocumento() {
 		return documento;
@@ -78,6 +77,12 @@ public class Docente {
 		this.primerApellido = primerApellido;
 		this.codigo = codigo;
 		this.email = email;
+		this.clave = clave;
+	}
+
+	public Docente(Long documento, String clave) {
+		super();
+		this.documento = documento;
 		this.clave = clave;
 	}
 
