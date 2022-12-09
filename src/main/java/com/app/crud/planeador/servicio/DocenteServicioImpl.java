@@ -3,6 +3,7 @@ package com.app.crud.planeador.servicio;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.app.crud.planeador.entidad.Administrador;
@@ -14,6 +15,7 @@ public class DocenteServicioImpl implements DocenteServicio{
 
 	@Autowired
 	private DocenteRepositorio repositorio;
+
 	
 	public List<Docente> listarTodosLosDocentes(){
 		return repositorio.findAll();
