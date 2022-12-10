@@ -27,32 +27,38 @@
         ><i class="fas fa-anchor"></i> <span>PLANEADOR</span></a
       >
     </header>
-    <nav class="dashboard-nav-list">
-      <a th:href="@{/perfil}" class="dashboard-nav-item">
-        <i class="fas fa-home"></i> Mi perfil
-      </a><a href="#" class="dashboard-nav-item active"
-        ><i class="fas fa-tachometer-alt"></i> Microcurrículos </a
-      ><a href="#" class="dashboard-nav-item"
-        ><i class="fas fa-file-upload"></i> Planeadores
-      </a>
-      <div class="dashboard-nav-dropdown">
-        <a class="dashboard-nav-item dashboard-nav-dropdown-toggle" href="#!">
-          <i class="fas fa-photo-video"> </i> Docentes
-        </a>
-        <div class="dashboard-nav-dropdown-menu">
-          <a class="dashboard-nav-dropdown-item" th:href="@{/docentes}">
-            Lista de Docentes
-          </a>
-          <a class="dashboard-nav-dropdown-item" th:href="@{/docentes/nuevo}">
-            Agregar docente
-          </a>
-        </div>
-      </div>
-      <div class="nav-item-divider"></div>
-      <a href="#" class="dashboard-nav-item"
-        ><i class="fas fa-sign-out-alt"></i>Cerrar Sesión</a
-      >
-    </nav>
+   <nav class="dashboard-nav-list">
+					<a th:href="@{/perfil}" class="dashboard-nav-item">
+						<i class="fas fa-home"></i>
+						Mi perfil
+					</a>
+					<a th:href="@{/microcurriculos}" class="dashboard-nav-item active">
+						<i class="fas fa-tachometer-alt"></i>
+						Microcurrículos
+					</a>
+					<a href="#" class="dashboard-nav-item">
+						<i class="fas fa-file-upload"></i>
+						Planeadores
+					</a>
+					<div class="dashboard-nav-dropdown">
+						<a class="dashboard-nav-item dashboard-nav-dropdown-toggle" href="#!">
+							<i class="fas fa-list fa-w"></i>
+							Los Docentes
+						</a>
+						<div class="dashboard-nav-dropdown-menu">
+							<a class="dashboard-nav-dropdown-item" th:href="@{/docentes}">
+								Lista de Docentes
+							</a>
+							<a class="dashboard-nav-dropdown-item" th:href="@{/docentes/nuevo}">
+								Agregar docente
+							</a>
+						</div>
+					</div>
+					<div class="nav-item-divider"></div>
+					<a href="@{/login}" class="dashboard-nav-item">
+						<i class="fas fa-sign-out-alt"></i>Cerrar Sesión
+					</a>
+				</nav>
   </div>
       <div class="dashboard-app">
         <header class="dashboard-toolbar">
