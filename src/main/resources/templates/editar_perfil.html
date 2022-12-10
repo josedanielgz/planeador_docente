@@ -59,73 +59,87 @@
 				<div class="container">
 					<div class="card">
 						<div class="card-header">
-							<h1>Perfil de Usuario</h1>
+							<h1>
+								Editar perfil del docente <span
+									th:text="${el_docente.primerNombre}"></span>
+							</h1>
 						</div>
-
 						<div class="card-body">
-							<div class="row">
-								<div class="col-sm-9">
-									<div class="col-sm-3">
-										<p class="mb-0">
-											<b>Documento</b>
-										</p>
-									</div>
+							<form th:action="@{/perfil/{id}(id=${el_docente.documento})}"
+								th:object="${el_docente}" method="POST">
+								<div class="row">
+
 									<div class="col-sm-9">
-										<p class="mb-0" th:text="${el_docente.documento}"></p>
+										<div class="col-sm-3">
+											<p class="mb-0">
+												<b>Documento</b>
+											</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="documento"
+												class="form-control form-control-lg" th:field="*{documento}"
+												disabled />
+										</div>
+										<hr />
+										<div class="col-sm-3">
+											<p class="mb-0">
+												<b>Primer nombre</b>
+											</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="primerNombre"
+												class="form-control form-control-lg"
+												th:field="*{primerNombre}" />
+										</div>
+										<hr />
+										<div class="col-sm-3">
+											<p class="mb-0">
+												<b>Primer apellido</b>
+											</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="text" id="primerApellido"
+												class="form-control
+                      form-control-lg"
+												th:field="*{primerApellido}">
+										</div>
+										<hr />
+										<div class="col-sm-3">
+											<p class="mb-0">
+												<b>Código</b>
+											</p>
+										</div>
+										<div class="col-sm-9">
+											<input type="number" id="codigo"
+												class="form-control form-control-lg" th:field="*{codigo}" />
+										</div>
+										<hr />
+										<div class="col-sm-3">
+											<p class="mb-0">
+												<b>Correo electrónico</b>
+											</p>
+										</div>
+										<div class="col-sm-9">
+											<div class="form-outline">
+												<input type="email" id="emailAddress"
+													class="form-control form-control-lg" th:field="*{email}" />
+											</div>
+											<hr />
+										</div>
+										<div class="col-sm-3">
+											<img class="card-img-top"
+												src="https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png"
+												alt="Card image cap" />
+										</div>
+										<div class="d-flex justify-content-center mb-2">
+											<input class="btn btn-primary btn-lg" type="submit"
+												value="Guardar cambios" /> <a class="btn btn-danger btn-lg"
+												th:href="@{/docentes}">Cancelar</a>
+										</div>
 									</div>
-									<hr />
-									<div class="col-sm-3">
-										<p class="mb-0">
-											<b>Primer nombre</b>
-										</p>
-									</div>
-									<div class="col-sm-9">
-										<p class="mb-0" th:text="${el_docente.primerNombre}">Texto
-											2</p>
-									</div>
-									<hr />
-									<div class="col-sm-3">
-										<p class="mb-0">
-											<b>Primer apellido</b>
-										</p>
-									</div>
-									<div class="col-sm-9">
-										<p class="mb-0" th:text="${el_docente.primerApellido}">Texto
-											3</p>
-									</div>
-									<hr />
-									<div class="col-sm-3">
-										<p class="mb-0">
-											<b>Código</b>
-										</p>
-									</div>
-									<div class="col-sm-9">
-										<p class="mb-0" th:text="${el_docente.codigo}"></p>
-									</div>
-									<hr />
-									<div class="col-sm-3">
-										<p class="mb-0">
-											<b>Correo electrónico</b>
-										</p>
-									</div>
-									<div class="col-sm-9">
-										<p class="mb-0" th:text="${el_docente.email}"></p>
-									</div>
-									<hr />
 								</div>
-								<div class="col-sm-3">
-									<img class="card-img-top"
-										src="https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png"
-										alt="Card image cap" />
-								</div>
-								<div class="d-flex justify-content-center mb-2">
-									<a class="btn btn-primary"
-										th:href="@{/perfil/editar/{documento}(documento=${el_docente.documento})}">
-										Modificar Datos</a>
-<!-- 									<button type="button" class="btn btn-outline-primary ms-1"> -->
-<!-- 										Cambiar Foto</button> -->
-								</div>
-							</div>
+
+							</form>
 						</div>
 					</div>
 				</div>

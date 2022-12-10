@@ -23,10 +23,8 @@ public class PlaneadorApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-		Docente docente1 = new Docente((long) 1093456711, "Hector", "Mendoza", "6669999", "testing@ufps.edu.co", passwordEncoder.encode("123456789"));
-		Docente docente2 = new Docente((long) 1013242311, "Aquiles", "Baesa", "5169229", "weweee@yourlife.org", passwordEncoder.encode("superclave456"));
-//		Docente docente3 = new Docente((long) 1235242311, "Texto", "Interesante", "901420", "support@yourlife.org", "superclave456");
-//		Docente docente4 = new Docente((long) 1765242388, "Texto", "Interesante", "901420", "support@yourlife.org", "superclave456");
+		Docente docente1 = new Docente((long) 1093456711, "Antion", "Puerto", "1234524", "testing@ufps.edu.co", passwordEncoder.encode("123456789"));
+		Docente docente2 = new Docente((long) 1013242311, "Aquiles", "Baesa", "5169229", "otrocorrep@ufps.edu.co", passwordEncoder.encode("superclave456"));
 		Administrador a = new Administrador(docente1.getDocumento());
 		repositorio.save(docente1);
 		repositorio.save(docente2);

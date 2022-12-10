@@ -22,7 +22,7 @@ public class DocenteControlador {
 	@Autowired
 	private AdministradorServicio adminServicio;
 	@Autowired
-	 private PasswordEncoder passwordEncoder;
+	private PasswordEncoder passwordEncoder;
 
 //	@GetMapping({"/","/perfil"})
 //	public String paginaPrincipal(){
@@ -37,27 +37,33 @@ public class DocenteControlador {
 		return "login";
 	}
 
+	@GetMapping({ "/login" })
+	public String regresarInicio(Model model) {
+		model.addAttribute("el_docente", new Docente());
+		return "login";
+	}
+
+	
 	@PostMapping("/login")
 	public String iniciarSesion(@ModelAttribute("el_docente") Docente docente, Model model) {
 //		https://stackoverflow.com/questions/54597495/how-to-compare-a-password-text-with-the-bcrypt-hashes
-		Administrador elAdmin = adminServicio.buscarAdministradorPorDocumento(docente.getDocumento());
-		if (elAdmin != null) {
-			Docente guardado = servicio.buscarDocentePorDocumento(elAdmin.getDocente());
-			if (passwordEncoder.matches(docente.getClave(), guardado.getClave())) {
-				model.addAttribute("el_docente", guardado);
-				return "perfil";
+		try {
+			Administrador elAdmin = adminServicio.buscarAdministradorPorDocumento(docente.getDocumento());
+			if (elAdmin != null) {
+				Docente guardado = servicio.buscarDocentePorDocumento(elAdmin.getDocente());
+				if (passwordEncoder.matches(docente.getClave(), guardado.getClave())) {
+					model.addAttribute("el_docente", guardado);
+					return "perfil";
+				}
 			}
+			return "redirect:/login?error";
+		} catch (Exception e) {
+			return "redirect:/login?error";
 		}
-		return "redirect:/login?error";
 	}
 
-//	@GetMapping({"/perfil"})
-//	public String redirigirPerfil(){
-//		
-//		return "perfil";
-//	}
-
-//	@GetMapping({"/docentes","/"})
+//CONTROLADORES PARA EL MENU DE DOCENTES
+	
 	@GetMapping({ "/docentes" })
 	public String listarDocentes(Model modelo) {
 		modelo.addAttribute("docentes", servicio.listarTodosLosDocentes());
@@ -101,5 +107,34 @@ public class DocenteControlador {
 	public String eliminarDocente(@PathVariable Long documento) {
 		servicio.eliminarDocente(documento);
 		return "redirect:/docentes";
-	};
+	}
+	
+//	CONTROLADORES PARA EDITAR EL PERFIL
+	@GetMapping({ "/perfil" })
+	public String elPerfil() {
+		return "perfil";
+	}
+
+	@GetMapping("/perfil/editar/{documento}")
+	public String editarPerfil(@PathVariable Long documento, Model modelo) {
+		modelo.addAttribute("el_docente", servicio.buscarDocentePorDocumento(documento));
+		return "editar_perfil";
+	}
+
+	@PostMapping("/perfil/{documento}")
+	public String actualizarPerfil(@PathVariable Long documento, @ModelAttribute("el_docente") Docente docente,
+			Model modelo) {
+
+		Docente docenteExistente = servicio.buscarDocentePorDocumento(documento);
+		docenteExistente.setDocumento(docente.getDocumento());
+		docenteExistente.setPrimerNombre(docente.getPrimerNombre());
+		docenteExistente.setPrimerApellido(docente.getPrimerApellido());
+		docenteExistente.setCodigo(docente.getCodigo());
+		docenteExistente.setEmail(docente.getEmail());
+		servicio.guardarDocente(docenteExistente);
+		modelo.addAttribute("el_docente", docenteExistente);
+		return "redirect:/docentes";
+	}
+
+//	https://github.com/daisy-world/ExcelToDB/blob/master/src/main/java/com/salesxl/ExcelReadService.java
 }
