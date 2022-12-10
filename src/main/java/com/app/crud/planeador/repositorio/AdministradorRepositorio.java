@@ -7,6 +7,6 @@ import com.app.crud.planeador.entidad.Administrador;
 
 
 @Repository
-public interface AdministradorRepositorio extends JpaRepository<Administrador, Long> {
+public interface AdministradorRepositorio extends JpaRepository <Administrador, Long> {
 	
 }                                             

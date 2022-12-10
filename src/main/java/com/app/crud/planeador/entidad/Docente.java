@@ -18,7 +18,7 @@ public class Docente {
 	private String codigo;
 	@Column(name = "email", nullable = false, length = 50, unique = true)
 	private String email;
-	@Column(name = "clave", nullable = false, length = 60)
+	@Column(name = "clave", length = 60)
 	private String clave;
 
 	public Long getDocumento() {

@@ -79,6 +79,7 @@ public class DocenteControlador {
 
 	@PostMapping("/docentes")
 	public String guardarEstudiante(@ModelAttribute("docente") Docente docente) {
+		docente.setClave(passwordEncoder.encode(docente.getClave()));
 		servicio.guardarDocente(docente);
 		return "redirect:/docentes";
 	}
@@ -92,14 +93,13 @@ public class DocenteControlador {
 	@PostMapping("/docentes/{documento}")
 	public String actualizarEstudiante(@PathVariable Long documento, @ModelAttribute("docente") Docente docente,
 			Model modelo) {
-
 		Docente docenteExistente = servicio.buscarDocentePorDocumento(documento);
 		docenteExistente.setDocumento(docente.getDocumento());
 		docenteExistente.setPrimerNombre(docente.getPrimerNombre());
 		docenteExistente.setPrimerApellido(docente.getPrimerApellido());
 		docenteExistente.setCodigo(docente.getCodigo());
 		docenteExistente.setEmail(docente.getEmail());
-		servicio.guardarDocente(docente);
+		servicio.guardarDocente(docenteExistente);
 		return "redirect:/docentes";
 	}
 

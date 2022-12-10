@@ -1,1 +1,96 @@
-var _0x8518=["\x74\x64","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x63\x6F\x6C\x73\x70\x61\x6E","\x73\x65\x74\x41\x74\x74\x72\x69\x62\x75\x74\x65","\x74\x61\x62\x6C\x65","\x74\x62\x6F\x64\x79","\x74\x61\x62\x6C\x65\x2D\x62\x6F\x72\x64\x65\x72\x65\x64","\x62\x6F\x72\x64\x65\x72\x2D\x6C\x69\x67\x68\x74","\x74\x61\x62\x6C\x65\x2D\x6C\x69\x67\x68\x74","\x61\x64\x64","\x63\x6C\x61\x73\x73\x4C\x69\x73\x74","\x74\x72","\x69\x6E\x6E\x65\x72\x54\x65\x78\x74","\x61\x70\x70\x65\x6E\x64","\x66\x6F\x72\x45\x61\x63\x68","\x70\x72\x65\x76\x65\x6E\x74\x44\x65\x66\x61\x75\x6C\x74","\x74\x61\x62\x6C\x65\x2D\x62\x6F\x64\x79","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","","\x4D\x69\x63\x72\x6F\x63\x75\x72\x72\xED\x63\x75\x6C\x6F\x20\x31","\x52\x65\x73\x75\x6C\x74\x61\x64\x6F\x20\x31","\x52\x65\x73\x75\x6C\x74\x61\x64\x6F\x20\x32","\x52\x65\x73\x75\x6C\x74\x61\x64\x6F\x20\x33","\x43\x6F\x6D\x70\x65\x74\x65\x6E\x63\x69\x61\x20\x31","\x43\x6F\x6D\x70\x65\x74\x65\x6E\x63\x69\x61\x20\x32","\x43\x6F\x6D\x70\x65\x74\x65\x6E\x63\x69\x61\x20\x33","\x55\x6E\x69\x64\x61\x64\x20\x31","\x55\x6E\x69\x64\x61\x64\x20\x32","\x55\x6E\x69\x64\x61\x64\x20\x33","\x66\x6F\x72\x6D\x75\x6C\x61\x72\x69\x6F","\x73\x75\x62\x6D\x69\x74","\x61\x64\x64\x45\x76\x65\x6E\x74\x4C\x69\x73\x74\x65\x6E\x65\x72","\x63\x6C\x69\x63\x6B","\x6D\x61\x69\x6E\x2D\x74\x61\x62\x6C\x65","\x64\x6F\x63\x75\x6D\x65\x6E\x74","\x67\x65\x74\x44\x61\x74\x65","\x67\x65\x74\x4D\x6F\x6E\x74\x68","\x67\x65\x74\x46\x75\x6C\x6C\x59\x65\x61\x72","\x2D","\x61\x72\x63\x68\x69\x76\x6F","\x2E\x70\x64\x66","\x6A\x70\x65\x67","\x69\x6E","\x6C\x65\x74\x74\x65\x72","\x70\x6F\x72\x74\x72\x61\x69\x74","\x73\x61\x76\x65","\x73\x65\x74","\x66\x72\x6F\x6D","\x64\x65\x73\x63\x61\x72\x67\x61\x72\x50\x44\x46"];function appendComponents(_0xc372x2,_0xc372x3){temp_item= document[_0x8518[1]](_0x8518[0]);temp_item[_0x8518[3]](_0x8518[2],1);temp_table= document[_0x8518[1]](_0x8518[4]);temp_tbody= document[_0x8518[1]](_0x8518[5]);temp_table[_0x8518[10]][_0x8518[9]](_0x8518[4],_0x8518[6],_0x8518[7],_0x8518[8]);_0xc372x2[_0x8518[14]]((_0xc372x4)=>{var _0xc372x5=document[_0x8518[1]](_0x8518[11]);_0xc372x5[_0x8518[12]]= _0xc372x4;temp_tbody[_0x8518[13]](_0xc372x5)});temp_table[_0x8518[13]](temp_tbody);temp_item[_0x8518[13]](temp_table);_0xc372x3[_0x8518[13]](temp_item)}var evento_formulario=function(_0xc372x7){_0xc372x7[_0x8518[15]]();var _0xc372x8=document[_0x8518[17]](_0x8518[16]);_0xc372x8[_0x8518[18]]= _0x8518[19];var _0xc372x9=document[_0x8518[1]](_0x8518[11]);var _0xc372xa=document[_0x8518[1]](_0x8518[0]);_0xc372xa[_0x8518[12]]= _0x8518[20];_0xc372x9[_0x8518[13]](_0xc372xa);var _0xc372xb=[_0x8518[21],_0x8518[22],_0x8518[23]];appendComponents(_0xc372xb,_0xc372x9);var _0xc372xc=[_0x8518[24],_0x8518[25],_0x8518[26]];appendComponents(_0xc372xc,_0xc372x9);var _0xc372xd=[_0x8518[27],_0x8518[28],_0x8518[29]];appendComponents(_0xc372xd,_0xc372x9);_0xc372x8[_0x8518[13]](_0xc372x9)};var form=document[_0x8518[17]](_0x8518[30]);form[_0x8518[32]](_0x8518[31],evento_formulario,true);document[_0x8518[17]](_0x8518[49])[_0x8518[32]](_0x8518[33],()=>{const _0xc372xf=this[_0x8518[35]][_0x8518[17]](_0x8518[34]);let _0xc372x10= new Date();let _0xc372x11=_0xc372x10[_0x8518[36]]();let _0xc372x12=_0xc372x10[_0x8518[37]]()+ 1;let _0xc372x13=_0xc372x10[_0x8518[38]]();let _0xc372x14=_0xc372x11+ _0x8518[39]+ _0xc372x12+ _0x8518[39]+ _0xc372x13;var _0xc372x15={margin:1,filename:_0x8518[40]+ _0xc372x14+ _0x8518[41],image:{type:_0x8518[42],quality:0.98},html2canvas:{scale:2},jsPDF:{unit:_0x8518[43],format:_0x8518[44],orientation:_0x8518[45]}};html2pdf()[_0x8518[48]](_0xc372xf)[_0x8518[47]](_0xc372x15)[_0x8518[46]]()})
+function appendComponents(items, parent) {
+	temp_item = document.createElement("td");
+	temp_item.setAttribute( 'colspan', 1 );
+	temp_table = document.createElement("table");
+	temp_tbody = document.createElement("tbody");
+	temp_table.classList.add("table","table-bordered","border-light","table-light");
+	items.forEach(val => {
+		var temp_td = document.createElement("tr");
+		temp_td.innerText = val;
+		temp_tbody.append(temp_td)
+	});
+	temp_table.append(temp_tbody)
+	temp_item.append(temp_table);
+	parent.append(temp_item);
+}
+
+var evento_formulario = function(event) {
+	event.preventDefault();
+
+	var tbody = document.getElementById("table-body");
+	tbody.innerHTML = ''
+	var fila = document.createElement("tr");
+	var item = document.createElement("td");
+	item.innerText = "Hacer"
+	fila.append(item);
+	var resultados = ["Resultado uno", "*", "*", "*"];
+	appendComponents(resultados,fila);
+	var competencias = ["2", "*", "*", "*"];
+	appendComponents(competencias, fila);
+	var unidades = ["10%", "*", "*", "*"];
+	appendComponents(unidades, fila);
+	tbody.append(fila);
+
+}
+//	const obj = {
+//		descripcion: "Microcurrículo 1",
+//		competencias: ["Competencia 1", "Competencia 2", "Competencia 3"],
+//		unidades: ["Unidad 1", "Unidad 2", "Unidad 3"]
+//	};
+
+//	for (const key in obj) {
+//		if (!obj.hasOwnProperty(key)) continue;
+//		const value = Array.isArray(obj[key]) ? obj[key] : [obj[key]];
+//		const row = document.createElement('tr');
+//		const key_cell = Object.assign(document.createElement('td'), {
+//			innerText: key
+//		});
+//		const value_column = Object.assign(document.createElement('td'), {
+//			innerText: value.splice(0, 1)[0]
+//		});
+//
+//		row.append(...[key_cell, value_column]);
+//		tbody.append(row);
+//
+//		value.forEach(val => {
+//			const inner_row = document.createElement('tr');
+//			const empty_key_cell = document.createElement('td');
+//			const value_cell = Object.assign(document.createElement('td'), {
+//				innerText: val
+//			});
+//			inner_row.append(...[empty_key_cell, value_cell]);
+//			tbody.append(inner_row);
+//		});
+//	}
+//
+
+
+
+
+var form = document.getElementById("formulario");
+form.addEventListener("submit", evento_formulario, true);
+
+document.getElementById("descargarPDF")
+            .addEventListener("click", () => {
+                const invoice = this.document.getElementById("main-table");
+//                console.log(invoice);
+//                console.log(window);
+                let currentDate = new Date();
+                let cDay = currentDate.getDate();
+                let cMonth = currentDate.getMonth() + 1;
+                let cYear = currentDate.getFullYear();
+                let fulldate = cDay + "-" + cMonth + "-" + cYear;
+                
+                var opt = {
+                    margin: 1,
+                    filename: 'archivo'+fulldate+'.pdf',
+                    image: {type: 'jpeg', quality: 0.98},
+                    html2canvas: {scale: 2},
+                    jsPDF: {unit: 'in', format: 'letter', orientation: 'portrait'}
+                };
+                html2pdf().from(invoice).set(opt).save();
+            });
+
+//https://javascript.tutorialink.com/how-to-dynamically-create-a-table-from-a-json-with-nested-lists-using-javascript/
+//https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+//https://stackoverflow.com/questions/13980982/add-class-to-html-with-javascript

@@ -7,8 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MicrocurriculoControlador {
 
-	@GetMapping("/microcurriculos")
+	@GetMapping("/planeadores")
 	public String principalMicrocurriculos(Model model) {
-		return "microcurriculos";
+		return "planeadores";
 	}
 }
