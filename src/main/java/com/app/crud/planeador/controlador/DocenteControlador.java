@@ -43,27 +43,35 @@ public class DocenteControlador {
 		return "login";
 	}
 
-	
 	@PostMapping("/login")
 	public String iniciarSesion(@ModelAttribute("el_docente") Docente docente, Model model) {
 //		https://stackoverflow.com/questions/54597495/how-to-compare-a-password-text-with-the-bcrypt-hashes
-		try {
-			Administrador elAdmin = adminServicio.buscarAdministradorPorDocumento(docente.getDocumento());
-			if (elAdmin != null) {
-				Docente guardado = servicio.buscarDocentePorDocumento(elAdmin.getDocente());
-				if (passwordEncoder.matches(docente.getClave(), guardado.getClave())) {
-					model.addAttribute("el_docente", guardado);
-					return "perfil";
-				}
+		Administrador elAdmin = adminServicio.buscarAdministradorPorDocumento(docente.getDocumento());
+		if (elAdmin != null) {
+			Docente guardado = servicio.buscarDocentePorDocumento(elAdmin.getDocente());
+			if (passwordEncoder.matches(docente.getClave(), guardado.getClave())) {
+				model.addAttribute("el_docente", guardado);
+				return "perfil";
 			}
-			return "redirect:/login?error";
-		} catch (Exception e) {
-			return "redirect:/login?error";
 		}
+		return "redirect:/login?error";
+//		try {
+//			Administrador elAdmin = adminServicio.buscarAdministradorPorDocumento(docente.getDocumento());
+//			if (elAdmin != null) {
+//				Docente guardado = servicio.buscarDocentePorDocumento(elAdmin.getDocente());
+//				if (passwordEncoder.matches(docente.getClave(), guardado.getClave())) {
+//					model.addAttribute("el_docente", guardado);
+//					return "perfil";
+//				}
+//			}
+//			return "redirect:/login?error";
+//		} catch (Exception e) {
+//			return "redirect:/login?error";
+//		}
 	}
 
 //CONTROLADORES PARA EL MENU DE DOCENTES
-	
+
 	@GetMapping({ "/docentes" })
 	public String listarDocentes(Model modelo) {
 		modelo.addAttribute("docentes", servicio.listarTodosLosDocentes());
@@ -78,7 +86,7 @@ public class DocenteControlador {
 	}
 
 	@PostMapping("/docentes")
-	public String guardarEstudiante(@ModelAttribute("docente") Docente docente) {
+	public String guardarDocente(@ModelAttribute("docente") Docente docente) {
 		docente.setClave(passwordEncoder.encode(docente.getClave()));
 		servicio.guardarDocente(docente);
 		return "redirect:/docentes";
@@ -108,7 +116,7 @@ public class DocenteControlador {
 		servicio.eliminarDocente(documento);
 		return "redirect:/docentes";
 	}
-	
+
 //	CONTROLADORES PARA EDITAR EL PERFIL
 	@GetMapping({ "/perfil" })
 	public String elPerfil() {

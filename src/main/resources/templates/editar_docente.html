@@ -34,9 +34,9 @@
 						href="#!"> <i class="fas fa-list fa-w"></i> Microcurrículos
 					</a>
 					<div class="dashboard-nav-dropdown-menu">
-						<a class="dashboard-nav-dropdown-item" th:href="@{/curso/nuevo}">
+						<a class="dashboard-nav-dropdown-item" th:href="@{/cursos/nuevo}">
 							Agregar curso</a> <a class="dashboard-nav-dropdown-item"
-							th:href="@{/docentes/nuevo}"> Cursos existentes </a>
+							th:href="@{/cursos}"> Cursos existentes </a>
 					</div>
 				</div>
 
@@ -75,7 +75,7 @@
 								<div class="col-md-6 mb-4">
 									<div class="form-outline">
 										<input type="text" id="documento"
-											class="form-control form-control-lg" th:field="*{documento}" />
+											class="form-control form-control-lg" th:field="*{documento}" disabled/>
 										<label class="form-label" for="primerNombre">Documento</label>
 									</div>
 								</div>

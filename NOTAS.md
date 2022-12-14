@@ -65,3 +65,8 @@ Bootstrap posee clases utilitarias para manipular la estructura de una página e
 * [Consultar sobre tablas.](https://getbootstrap.com/docs/5.0/content/tables/)
 * [Ejemplos perfiles Bootstrap.](https://mdbootstrap.com/docs/standard/extended/profiles/#)
 * [Bootstrap Cards.](https://getbootstrap.com/docs/5.0/components/card/)
+* https://javascript.tutorialink.com/how-to-dynamically-create-a-table-from-a-json-with-nested-lists-using-javascript/
+* https://developer.mozilla.org/en-US/docs/Web/API/Element/classList
+* https://stackoverflow.com/questions/13980982/add-class-to-html-with-javascript
+* https://stackoverflow.com/questions/53992707/get-the-selected-value-in-a-select-option-thymeleaf-and-spring-boot
+* https://stackoverflow.com/questions/42135114/how-does-spring-jpa-hibernate-ddl-auto-property-exactly-work-in-spring

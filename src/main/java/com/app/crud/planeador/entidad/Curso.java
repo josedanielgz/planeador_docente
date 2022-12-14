@@ -14,8 +14,6 @@ public class Curso {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(name = "codigo", nullable = false)
-	private Long codigo;
 	@Column(name = "nombre")
 	private String nombre;
 	@Column(name = "nroCreditos")
@@ -33,14 +31,6 @@ public class Curso {
 
 	public void setId(Long id) {
 		this.id = id;
-	}
-
-	public Long getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
 	}
 
 	public String getNombre() {
@@ -83,11 +73,9 @@ public class Curso {
 		this.programa = programa;
 	}
 
-	public Curso(Long id, Long codigo, String nombre, Integer nroCreditos, Integer horasIndependientes,
-			Integer horasDirectas, String programa) {
+	public Curso(String nombre, Integer nroCreditos, Integer horasIndependientes, Integer horasDirectas,
+			String programa) {
 		super();
-		this.id = id;
-		this.codigo = codigo;
 		this.nombre = nombre;
 		this.nroCreditos = nroCreditos;
 		this.horasIndependientes = horasIndependientes;
